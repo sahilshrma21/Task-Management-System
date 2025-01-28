@@ -1,73 +1,47 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "../Style/Login.css";
-import { toast } from "react-toastify";
+import React, { useEffect, useState } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
+import Add from "./components/AddTask";
+import Navabr from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import List from "./components/TaskList";
+import Login from "./pages/Login";
 
-const Login = ({setToken}) => {
- const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-const onSubmitHandler = async (e) => {
+const App = () => {
+  const [token, setToken] = useState(
+    localStorage.getItem("token") ? localStorage.getItem("token") : ""
+  );
 
-try { e.preventDefault();
-  const response = await axios.post('http://localhost:5000/api/auth/login', {email,password});
-
-  if(response.data.token){
-    setToken(response.data.token);
-  }else{
-    toast.error(response.data.error);
-  }}catch (error) {
-    console.error(error);
-    toast.error('An error occurred' + error.message);
-  }
- 
-
-}
-const navigate = useNavigate();
-
-  const goToRegister = () => {
-    navigate("/register");
-  };
+  useEffect(() => {
+    localStorage.setItem("token", token);
+  }, [token]);
 
   return (
-    <div className="auth-page">
-      <div className="auth-container">
-        <h2 className="auth-title">Login</h2>
-        <form onSubmit={onSubmitHandler} className="auth-form">
-          <div className="form-group">
-            <label className="form-label">Username</label>
-            <input
-              type="text"
-              name="username"
-              value={email}
-              onChange={(e)=> setEmail(e.target.value)}
-              required
-              className="form-input"
-            />
-          </div>
-          <div className="form-group">
-            <label className="form-label">Password</label>
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={(e)=> setPassword(e.target.value)}
-              required
-              className="form-input"
-            />
-          </div>
-          <button type="submit" className="auth-button">
-            Login
-          </button>
-        </form>
-        <p className="auth-footer">
-          Don't have an account?{" "}
-          <button onClick={goToRegister} className="signup-link">
-            Signup
-          </button>
-        </p>
+    <Router>
+      <div className="bg-gray-50 min-h-screen">
+        <ToastContainer />
+        {token === "" ? (
+          <Login setToken={setToken} />
+        ) : (
+          <>
+            <Navabr setToken={setToken} />
+            <hr />
+            <div className="flex w-full">
+              <Sidebar />
+              <div className="w-[70%] mx-auto ml-[max(5vw,25px)] my-8 text-gray-600 text-base">
+                <Routes>
+                  <Route path="/add" element={<Add token={token} />} />
+                  <Route path="/list" element={<List token={token} />} />
+                </Routes>
+              </div>
+            </div>
+          </>
+        )}
       </div>
-    </div>
+    </Router>
   );
 };
 
-export default Login;
+export default App;
