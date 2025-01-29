@@ -48,13 +48,20 @@
 // export default App;
 
 import React from 'react';
-import Home from './pages/Home';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import TaskDescription from './pages/TaskDescription';
+import TaskList from './pages/TaskList';
+
 const App = () => {
   return (
-    <div>
-      <Home/>
-    </div>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<TaskList />} />
+        <Route path="/task/:id" element={<TaskDescription />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
+
