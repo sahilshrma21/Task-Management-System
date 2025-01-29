@@ -9,7 +9,11 @@ const authMiddleware = (req, res, next) => {
 
   try {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+=======
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+>>>>>>> 11d2534 (with login page)
 =======
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 >>>>>>> 11d2534 (with login page)

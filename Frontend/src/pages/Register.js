@@ -79,5 +79,8 @@ const Register = () => {
 export default Register;
 =======
 export default Register;
+<<<<<<< HEAD
+>>>>>>> 11d2534 (with login page)
+=======
 >>>>>>> 11d2534 (with login page)
 

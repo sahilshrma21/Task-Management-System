@@ -7,6 +7,9 @@ import React from 'react'
 import logo from '../assets/logo.avif'
 import '../Style/Navbar.css'
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 11d2534 (with login page)
+=======
 >>>>>>> 11d2534 (with login page)
 =======
 >>>>>>> 11d2534 (with login page)
@@ -14,6 +17,7 @@ import '../Style/Navbar.css'
 function Navbar() {
   return (
     <div className='navbar'>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <NavLink className='logo' to="/">TMS</NavLink>
@@ -25,6 +29,10 @@ function Navbar() {
           <NavLink className='nav-link' to="/register">Register</NavLink>
         </button>
       </div>
+=======
+      <img src={logo} alt='' className='navbar-logo '/>
+      <button className='logout-btn'>Logout</button>
+>>>>>>> 11d2534 (with login page)
 =======
       <img src={logo} alt='' className='navbar-logo '/>
       <button className='logout-btn'>Logout</button>

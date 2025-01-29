@@ -1,9 +1,15 @@
 // import React from 'react'
 import express from 'express'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import authMiddleware from '../middlewares/authMiddleware.js'
 import authAdmin from '../middlewares/adminAuth.js'
 import{ createTask,specificTask, getTasks, updateTask, deleteTask } from '../controllers/takscontroller.js'
+=======
+
+import Task from '../models/Task.js'
+import authMiddleware from '../middlewares/authMiddleware.js'
+>>>>>>> 11d2534 (with login page)
 =======
 
 import Task from '../models/Task.js'
@@ -13,6 +19,7 @@ import authMiddleware from '../middlewares/authMiddleware.js'
 
 const router = express.Router()
 // Create a new task
+<<<<<<< HEAD
 <<<<<<< HEAD
 router.post("/create", authAdmin, createTask);
 
@@ -28,6 +35,8 @@ router.put("/:id", authAdmin,updateTask );
 // Delete a task by ID
 router.delete("/delete", authMiddleware ,deleteTask );
 =======
+=======
+>>>>>>> 11d2534 (with login page)
 router.post("/", authMiddleware, async (req, res) => {
   try {
     const { title, description, status, category, dueDate } = req.body;
@@ -111,6 +120,9 @@ router.delete("/:id", authMiddleware, async (req, res) => {
     res.status(500).json({ error: "Failed to delete task" });
   }
 });
+<<<<<<< HEAD
+>>>>>>> 11d2534 (with login page)
+=======
 >>>>>>> 11d2534 (with login page)
 
 
