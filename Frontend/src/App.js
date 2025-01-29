@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React, { useEffect, useState } from "react";
 // import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 // import { ToastContainer } from "react-toastify";
@@ -83,10 +84,19 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import TaskDescription from './pages/TaskDescription';
 import TaskList from './pages/TaskList';
+=======
+import React from 'react'
+// import Login from './pages/Login'
+// import Register from './pages/Register'
+import Sidebar from './components/Sidebar'
+import Navbar from './components/Navbar'
+import './index.css'
+>>>>>>> 11d2534 (with login page)
 
 const App = () => {
   return (
     <div>
+<<<<<<< HEAD
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -103,3 +113,16 @@ const App = () => {
 
 
 export default App
+=======
+        <Navbar/>
+        <hr />
+       <div className='container'>
+       <Sidebar/>
+      </div>
+
+    </div>
+  )
+}
+
+export default App
+>>>>>>> 11d2534 (with login page)
