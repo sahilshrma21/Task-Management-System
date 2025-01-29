@@ -75,5 +75,9 @@ const Register = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Register;
+=======
+export default Register;
+>>>>>>> 11d2534 (with login page)
 

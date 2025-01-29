@@ -8,7 +8,11 @@ const authMiddleware = (req, res, next) => {
   }
 
   try {
+<<<<<<< HEAD
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+=======
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+>>>>>>> 11d2534 (with login page)
     req.user = decoded; // Add user info from the token to the request object
     next();
   } catch (error) {
