@@ -47,21 +47,61 @@
 
 // export default App;
 
+// import React from 'react';
+
+// const App = () => {
+//   return (
+//     <Router>
+//       <Routes>
+//       </Routes>
+//     </Router>
+//   );
+// };
+
+// export default App;
+
+// import React from 'react';
+// // import AdminDashboard from './Admin/Pages/AdminDashboard';
+// import Navbar from './components/Navbar';
+
+
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <AdminDashboard/> */}
+//       <Navbar/>
+//     </div>
+//   )
+// }
+
+
 import React from 'react';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import AdminDashboard from './Admin/Pages/AdminDashboard';
+import './App.css';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import TaskDescription from './pages/TaskDescription';
 import TaskList from './pages/TaskList';
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<TaskList />} />
-        <Route path="/task/:id" element={<TaskDescription />} />
-      </Routes>
-    </Router>
+    <div>
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/tasks" element={<TaskList />} />
+          <Route path="/task/:id" element={<TaskDescription />} />
+          <Route path="/dashboard" element={<AdminDashboard />} />
+
+        </Routes>
+      </div>
+    </div>
   );
 };
 
-export default App;
 
+export default App

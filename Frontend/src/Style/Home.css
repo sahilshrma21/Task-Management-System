@@ -1,0 +1,81 @@
+.home-container {
+  width: 100%;
+  margin: 0; /* Remove auto margin to allow full width */
+  padding: 0; /* Remove padding to allow full height */
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9f9f9; /* Background color for the hero section */
+  height: 100vh; /* Full viewport height */
+  padding: 40px; /* Padding around the content */
+  border-radius: 0; /* Remove border radius for full width */
+  box-shadow: none; /* Remove shadow for a flat look */
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  width: 50%; /* Adjust width for larger screens */
+  padding: 20px; /* Add padding for better spacing */
+}
+
+.hero-heading {
+  font-weight: bold;
+  font-size: 4vw; /* Responsive font size */
+  line-height: 8vh; /* Responsive line height */
+  margin-top: 25px;
+}
+
+.hero-subheading {
+  margin-top: 5px;
+  font-weight: medium;
+  font-size: 1.125rem; /* Equivalent to text-lg */
+}
+
+.hero-image {
+  width: 50%; /* Adjust width for larger screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+      flex-direction: column; /* Stack content on smaller screens */
+      text-align: center; /* Center text */
+  }
+  .hero-content {
+      max-width: 100%; /* Allow full width on smaller screens */
+  }
+  .hero-image {
+      max-width: 80%; /* Limit image width */
+      margin-top: 20px; /* Add margin for spacing */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+      padding: 20px; /* Adjust padding for smaller screens */
+  }
+  .hero-heading {
+      font-size: 28px; /* Adjust heading size */
+  }
+  .hero-subheading {
+      font-size: 16px; /* Adjust subheading size */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-heading {
+      font-size: 24px; /* Further adjust heading size */
+  }
+  .hero-subheading {
+      font-size: 14px; /* Further adjust subheading size */
+  }
+  .cta-button {
+      padding: 10px 20px; /* Adjust button padding */
+      font-size: 14px; /* Adjust button font size */
+  }
+}
