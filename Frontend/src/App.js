@@ -77,7 +77,6 @@
 
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import AdminDashboard from './Admin/Pages/AdminDashboard';
 import './App.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -95,7 +94,6 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/tasks" element={<TaskList />} />
           <Route path="/task/:id" element={<TaskDescription />} />
-          <Route path="/dashboard" element={<AdminDashboard />} />
 
         </Routes>
       </div>

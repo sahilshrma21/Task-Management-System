@@ -1,23 +1,26 @@
 import React from 'react';
+import 'remixicon/fonts/remixicon.css';
 import '../Style/Footer.css';
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-left">
-          <img src="https://www.zager.in/_next/image?url=%2Flogowhite.png&w=64&q=75" alt="Logo" className="footer-logo" />
-          <p>It's all about values!</p>
-          <div className="social-links">
-            <a href="#"><i className="fab fa-facebook"></i></a>
-            <a href="#"><i className="fab fa-instagram"></i></a>
-            <a href="#"><i className="fab fa-x-twitter"></i></a>
-            <a href="#"><i className="fab fa-github"></i></a>
-            <a href="#"><i className="fab fa-youtube"></i></a>
-          </div>
-        </div>
-
         <div className="footer-links">
+              <div className="footer-left">
+                <div className='logo'>
+                <img src="https://www.zager.in/_next/image?url=%2Flogowhite.png&w=64&q=75" alt="Logo" className="footer-logo" />
+                <p>It's all about values!</p>
+                </div>
+                <div className="social-links">
+                  <h3>Social Links</h3>
+                  <a href="#"><i className="fab fa-messenger"></i><i class="ri-messenger-line"></i></a>
+                  <a href="#"><i className="fab fa-instagram"></i><i class="ri-instagram-line"></i></a>
+                  <a href="#"><i className="fab fa-x-twitter"></i><i class="ri-twitter-x-line"></i></a>
+                  <a href="#"><i className="fab fa-github"></i><i class="ri-github-fill"></i></a>
+                  <a href="#"><i className="fab fa-youtube"></i><i class="ri-youtube-line"></i></a>
+                </div>
+              </div>
           <div>
             <h3>Solutions</h3>
             <ul>
