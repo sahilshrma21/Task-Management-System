@@ -13,6 +13,7 @@ const Login = () => {
   };
 
   return (
+    <div className="card-space">
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>Login</h2>
@@ -46,6 +47,7 @@ const Login = () => {
           <a href="#register" className="register-link">Create an Account</a>
         </div>
       </form>
+    </div>
     </div>
   );
 };

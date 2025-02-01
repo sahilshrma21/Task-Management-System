@@ -10,7 +10,7 @@ const Footer = () => {
               <div className="footer-left">
                 <div className='logo'>
                 <img src="https://www.zager.in/_next/image?url=%2Flogowhite.png&w=64&q=75" alt="Logo" className="footer-logo" />
-                <p>It's all about values!</p>
+                <p className='logo-text'>It's all about values!</p>
                 </div>
                 <div className="social-links">
                   <h3>Social Links</h3>
@@ -58,6 +58,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <hr></hr>
       <div className="footer-bottom">© 2024 Your Company, Inc. All rights reserved.</div>
     </footer>
   );

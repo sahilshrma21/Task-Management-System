@@ -9,7 +9,7 @@ const TaskList = () => {
     {
       id: 1,
       name: 'Complete Project Report',
-      description: 'Write and submit the final project report.',
+      description: 'Write and submit the final project report',
       status: 'In Progress',
       priority: 'High',
       startDate: '2025-01-10',
@@ -41,17 +41,27 @@ const TaskList = () => {
     },
   ]);
 
+  const handleLogout = () => {
+    // Add your logout logic here
+    console.log("Logged out");
+  };
+
   return (
     <div className="home-container">
-      <h2>Assigned Tasks</h2>
+      <div className="header">
+        <h2>Assigned Tasks</h2>
+        <button className="logout-button" onClick={handleLogout}>Logout</button>
+      </div>
       <div className="task-list">
         {tasks.map(task => (
           <div key={task.id} className="task-card" onClick={() => navigate(`/task/${task.id}`, { state: { task } })}>
-            <h3>{task.name}</h3>
-            <p>{task.description}</p>
-            <p><strong>Start Date:</strong> {task.startDate}</p>
-            <p><strong>Due Date:</strong> {task.dueDate}</p>
-            <p><strong>Status:</strong> {task.status}</p>
+            <div className='heading'>
+              <h3>{task.name}</h3>
+            </div>
+            <p className='task-detail'>{task.description}</p>
+            <p className='task-detail'><strong>Start Date:</strong> {task.startDate}</p>
+            <p className='task-detail'><strong>Due Date:</strong> {task.dueDate}</p>
+            <p className='task-detail'><strong>Status:</strong> {task.status}</p>
           </div>
         ))}
       </div>

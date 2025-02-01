@@ -20,6 +20,7 @@ const Register = () => {
   };
 
   return (
+    <div className="card-space">
     <div className="register-container">
       <form className="register-form" onSubmit={handleSubmit}>
         <h2>Create Account</h2>
@@ -71,6 +72,7 @@ const Register = () => {
           Register
         </button>
       </form>
+    </div>
     </div>
   );
 };

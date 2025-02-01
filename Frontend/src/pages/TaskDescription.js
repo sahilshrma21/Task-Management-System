@@ -11,21 +11,28 @@ const TaskDescription = () => {
 
   return (
     <div className="task-detail-container">
-      <button className="back-button" onClick={() => navigate(-1)}>← Back</button>
-      <h2>{task.name}</h2>
-      <p><strong>Description:</strong> {task.description}</p>
-      <p><strong>Start Date:</strong> {task.startDate}</p>
-      <p><strong>Due Date:</strong> {task.dueDate}</p>
-      <p><strong>Priority:</strong> <span className={`priority ${task.priority.toLowerCase()}`}>{task.priority}</span></p>
-      <p><strong>Assigned By:</strong> {task.assignedBy}</p>
-      <p><strong>Comments:</strong> {task.comments}</p>
-      <p><strong>Status:</strong> 
-        <select value={status} onChange={(e) => setStatus(e.target.value)}>
-          <option value="Pending">Pending</option>
-          <option value="In Progress">In Progress</option>
-          <option value="Completed">Completed</option>
-        </select>
-      </p>
+      <div className="navbar">
+        <button className="back-button" onClick={() => navigate(-1)}>←</button>
+        <h2 className="task-name">Task Description</h2>
+      </div>
+      <div className="task-details">
+        <div className='content'>
+        <h3 className="task-title"><strong>Task Name:</strong>{task.name}</h3>
+        <p className='details'><strong>Description:</strong> {task.description}</p>
+        <p className='details'><strong>Start Date:</strong> {task.startDate}</p>
+        <p className='details'><strong>Due Date:</strong> {task.dueDate}</p>
+        <p className='details'><strong>Priority:</strong> <span className={`priority ${task.priority.toLowerCase()}`}>{task.priority}</span></p>
+        <p className='details'><strong>Assigned By:</strong> {task.assignedBy}</p>
+        <p className='details'><strong>Comments:</strong> {task.comments}</p>
+        <p className='details'><strong>Status:</strong>
+          <select className="status-select" value={status} onChange={(e) => setStatus(e.target.value)}>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </p>
+        </div>
+      </div>
     </div>
   );
 };

@@ -84,6 +84,11 @@
     line-height: 4vh;
     text-align: center ;
   }
+  .hero-image {
+    max-width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
   .hero-subheading {
     font-size: 16px; /* Adjust subheading size */
     text-align: center ;
