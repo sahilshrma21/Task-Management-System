@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 .navbar {
   height: 10vh;
   display: flex;
@@ -45,4 +49,58 @@
 
 .register {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+=======
+=======
+>>>>>>> 11d2534 (with login page)
+=======
+>>>>>>> 11d2534 (with login page)
+=======
+>>>>>>> 11d2534 (with login page)
+/* Navbar container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 4%;
+  background-color: #fff; /* Change this if needed */
+  border-bottom: 1px solid #ddd;
+  /* 0.5rem = 8px */;
+}
+
+/* Logo Styling */
+.navbar-logo {
+  width: max(1%, 80px);
+}
+
+/* Logout Button */
+.logout-btn {
+  background-color: #4b5563; /* Gray-600 */
+  color: white;
+  padding: 8px 20px;
+  font-size: 12px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #374151; /* Darker gray on hover */
+}
+
+/* Responsive Button Sizing */
+@media (min-width: 640px) {
+  .logout-btn {
+      padding: 8px 28px;
+      font-size: 14px;
+  }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 11d2534 (with login page)
+=======
+>>>>>>> 11d2534 (with login page)
+=======
+>>>>>>> 11d2534 (with login page)
+=======
+>>>>>>> 11d2534 (with login page)
 }

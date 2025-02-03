@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 4%;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
