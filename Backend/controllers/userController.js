@@ -7,6 +7,34 @@ const createToken = (id) =>{
   return jwt.sign({id},process.env.JWT_SECRET_KEY)
 
 }
+
+// fetch all users
+const getUsers = async (req, res) => {
+  try {
+    const users = await UserModel.find();
+    res.json(users);
+  }
+  catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+// fetch user by id
+const getUserById = async (req, res) => {
+  try {
+    const user
+      = await UserModel.findOne(req.params.username);
+      console.log(user);
+      
+    res.json(user);
+  }
+  catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
+
 //Route for user login 
 const loginUser = async (req, res) => {
           try {
@@ -72,9 +100,10 @@ const registerUser = async (req, res)=>{
 const adminLogin = async (req,res) => {
   try {
     const {email,password} = req.body;
+    console.log(email,password);
 
     if(email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD){
-      const token = jwt.sign(email+password,process.env.JWT_SECRET);
+      const token = jwt.sign(email+password,process.env.JWT_SECRET_KEY);
       res.json({success:true,token})
     }else{
       res.json({success:false,message:"Invalid credentials"})
@@ -88,4 +117,4 @@ const adminLogin = async (req,res) => {
   
 }
 
-export {loginUser , registerUser,adminLogin}
+export {loginUser , registerUser,adminLogin ,getUserById,getUsers}; // Export the functions

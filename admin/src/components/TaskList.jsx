@@ -1,78 +1,115 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-// import backendUrl from "../App.jsx";
+import {backendUrl} from "../App.jsx";
 
-const TaskList = () => {
- const [list ,setList] = useState([]);
+const TaskList = ({ token }) => {
+  const [list, setList] = useState([]);
+  const [username, setUsername] = useState([]);
 
- const fetchlist = async () => {
-try {
-  const response = await axios.get("http://localhost:4000/api/tasks/tasklist" , {headers:{token:localStorage.getItem('token')}});
 
-  if(response.data.success){
-    setList(response.data.tasks);
-  }  else{
-    toast.error(response.data.error);
-    console.log(response.data.error);
-  }
-} catch (error) {
-  toast.error(error.message);
-  
-} 
-}
 
-const deleteTask = async (id) => {
-  try {
-    const response = await axios.delete(`http://localhost:4000/api/tasks/deletetask/${id}`,{headers:{token:localStorage.getItem('token')}});
-    if(response.data.success){
-      toast.success(response.data.message);
-      fetchlist();
-    } else {
-      toast.error(response.data.error);
+
+  useEffect(() => {
+    axios.get(backendUrl + "/api/user/userdetails")
+    .then(response => console.log(response.data.username, response.data._id,response.data))
+      .then(response => setUsername(response.data.username,response.data._id))
+      .catch(error => console.error("Error fetching users:", error));
+  }, []);
+
+  const fetchlist = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/api/tasks/list', {
+        headers: { token: localStorage.getItem('token') }
+      });
+      console.log(response.data);
+
+      if (response.data.success) {
+        setList(response.data.tasks);
+      } else {
+        toast.error(response.data.error);
+      }
+    } catch (error) {
+      toast.error(error.message);
     }
-  } catch (error) {
-    console.log(error.message);
-    toast.error(error.message);
-  }
-}
+  };
 
+  const deleteTask = async (_id) => {
+    try {
+      const response = await axios.delete(
+        'http://localhost:3001/api/tasks/delete',
+        { 
+          data: { _id }, // Send _id in request body
+          headers: { token: localStorage.getItem('token') } 
+        }
+      );
+      if (response.data.success) {
+        toast.success(response.data.message);
+        await fetchlist();
+      } else {
+        toast.error(response.data.error);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
-useEffect(() => {
-  fetchlist();
-}
-, []);
+  useEffect(() => {
+    fetchlist();
+  }, []);
 
   return (
-    < >
+    <div className="p-5">
       <h2 className="text-xl font-bold">Task List</h2>
-    <div className="flex flex-col gap-4">
-      {/* List Table Title   */}
-      <div className='hidden md:grid grid-cols-[1fr_3rf_1fr_1fr] items-center py-1 px-2 border bg-gray-100 text-sm '>
-        <b>Task Title</b>
-        <b>Description</b>
-        <b>Assigned To</b>
-        <b>Due Date</b>
-        <b>Status</b>
-        <b className="text-center">Action</b>
-        
-{/* product List  */}
-{
-  list.map((item,index)=> {
-    <div className="grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_1fr_1fr_1fr] items-center gap-2 py-1 px-2 border text-sm" key={index}>
-      <p>{item.title}</p>
-      <p>{item.description}</p>
-      <p>{item.assignedTo}</p>
-      <p>{item.status}</p>
-      <p className="text-right md:text-cneter cursor-pointer text-lg" onClick={deleteTask}>X</p>
-      </div>
-  })
-}
-
-      </div>
-
+      <table className="w-full border-collapse border border-gray-300 mt-3">
+        <thead>
+          <tr className="bg-gray-200 text-center">
+            <th className="border p-2">Title</th>
+            <th className="border p-2">Description</th>
+            <th className="border p-2">Assigned To</th>
+            <th className="border p-2">Status</th>
+            <th className="border p-2">Category</th>
+            <th className="border p-2">Due Date</th>
+            <th className="border p-2">Priority</th>
+            <th className="border p-2">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {list.length > 0 ? (
+            list.map((task) => (
+              <tr key={task._id} className="text-center">
+                <td className="border p-2">{task.title}</td>
+                <td className="border p-2">{task.description}</td>
+                {/* Fixed: Display user's name */}
+                <td className="border p-2">
+                  {username.users ?.username || "Unknown User"}
+                </td>
+                <td className="border p-2">{task.status}</td>
+                <td className="border p-2">{task.category}</td>
+                <td className="border p-2">
+                  {new Date(task.dueDate).toLocaleDateString()}
+                </td>
+                <td className="border p-2">{task.priority}</td>
+                <td className="border p-2">
+                  <button
+                    className="text-red-500 font-bold"
+                    onClick={() => deleteTask(task._id)}
+                  >
+                    ❌
+                  </button>
+                </td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="8" className="text-center p-4">
+                No tasks found.
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </div>
-    </>
   );
 };
 

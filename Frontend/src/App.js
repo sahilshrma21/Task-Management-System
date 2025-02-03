@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import React, { useEffect, useState } from "react";
 // import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 // import { ToastContainer } from "react-toastify";
@@ -91,6 +92,8 @@ import TaskList from './pages/TaskList';
 >>>>>>> 11d2534 (with login page)
 =======
 >>>>>>> 11d2534 (with login page)
+=======
+>>>>>>> 11d2534 (with login page)
 import React from 'react'
 // import Login from './pages/Login'
 // import Register from './pages/Register'
@@ -99,6 +102,9 @@ import Navbar from './components/Navbar'
 import './index.css'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 11d2534 (with login page)
+=======
 >>>>>>> 11d2534 (with login page)
 =======
 >>>>>>> 11d2534 (with login page)
@@ -108,6 +114,7 @@ import './index.css'
 const App = () => {
   return (
     <div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -132,6 +139,8 @@ export default App
 >>>>>>> 11d2534 (with login page)
 =======
 >>>>>>> 11d2534 (with login page)
+=======
+>>>>>>> 11d2534 (with login page)
         <Navbar/>
         <hr />
        <div className='container'>
@@ -145,6 +154,9 @@ export default App
 export default App
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 11d2534 (with login page)
+=======
 >>>>>>> 11d2534 (with login page)
 =======
 >>>>>>> 11d2534 (with login page)
