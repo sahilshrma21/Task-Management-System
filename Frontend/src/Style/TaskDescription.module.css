@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Gilroy';
+}
+
+body {
+  background-color: #E7EDFD;
+}
+
+.taskDetailContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of the viewport */
+  background-color: #E7EDFD; /* Background color for the rest of the screen */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #A6BDFF; /* Navbar background color */
+  padding: 8px 20px; /* Padding for the navbar */
+  overflow: hidden;
+}
+
+.backButton {
+  width: 40px; /* Fixed width for the back button */
+  height: 40px; /* Fixed height for the back button */
+  margin-right: 20px; /* Space between button and heading */
+  padding: 8px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  background: #0056b3;
+}
+
+.taskName {
+  flex-grow: 1; /* Allow the heading to take available space */
+  text-align: center; /* Center the task name */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6vh; /* Font size for the task name */
+  padding-top: 5px;
+  font-weight: 900;
+}
+
+.taskDetails {
+  padding: 20px; /* Padding for the task details */
+  flex-grow: 1; /* Allow details to take remaining space */
+  overflow-y: auto; /* Enable scrolling if content overflows */
+  margin-left: 20px; /* Left margin for subtle alignment */
+  margin-right: 20px; /* Right margin for subtle alignment */
+  text-align: left;
+  border-radius: 10px; /* Rounded corners for the details section */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for the details section */
+  max-width: 90%; /* Reduce the width of the card slightly */
+  margin: 20px auto; /* Center the card horizontally with some margin */
+}
+
+.content p {
+  text-align: left;
+  font-size: 2.6vh;
+}
+
+.taskTitle {
+  font-size: 4.2vh; /* Font size for the task title */
+  margin-bottom: 15px; /* Space below the task title */
+  color: #333; /* Color for the task title */
+  text-align: center; /* Center align the task title */
+  text-decoration: underline;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.priority {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.priority.high {
+  background-color: #f82d2d;
+  color: white;
+}
+
+.priority.medium {
+  background-color: #ffa500;
+  color: white;
+}
+
+.priority.low {
+  background-color: #4caf50;
+  color: white;
+}
+
+.statusSelect {
+  width: 120px; /* Fixed width for the status dropdown */
+  height: 40px; /* Fixed height for the status dropdown */
+  margin-left: 10px; /* Space between status label and dropdown */
+  padding: 8px; /* Padding inside the dropdown */
+  font-size: 14px; /* Font size for the dropdown */
+  border: 1px solid #ddd; /* Border for the dropdown */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f9f9f9; /* Background color */
+  cursor: pointer;
+}
+
+.statusSelect:hover {
+  border: 2px #000;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For smartphones */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 15px;
+    height: fit-content; /* Adjust padding for the navbar */
+  }
+
+  .backButton {
+    width: 50px; /* Optionally increase the width of the back button */
+    height: 50px; /* Optionally increase the height of the back button */
+  }
+
+  .taskName {
+    font-size: 5vh; /* Adjust font size for task name */
+  }
+
+  .taskDetails {
+    padding: 15px; /* Adjust padding for task details */
+  }
+
+  .taskTitle {
+    font-size: 24px; /* Adjust font size for task title */
+  }
+
+  .priority {
+    font-size: 14px; /* Adjust font size for priority labels */
+  }
+
+  .statusSelect {
+    width: 100px; /* Adjust width for status dropdown */
+  }
+}

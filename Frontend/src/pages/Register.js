@@ -20,6 +20,7 @@ const Register = () => {
   };
 
   return (
+    <div className="card-space">
     <div className="register-container">
       <form className="register-form" onSubmit={handleSubmit}>
         <h2>Create Account</h2>
@@ -72,18 +73,10 @@ const Register = () => {
         </button>
       </form>
     </div>
+    </div>
   );
 };
 
-<<<<<<< HEAD
 export default Register;
-=======
-export default Register;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 11d2534 (with login page)
-=======
->>>>>>> 11d2534 (with login page)
-=======
->>>>>>> 11d2534 (with login page)
+
 

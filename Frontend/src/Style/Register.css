@@ -1,19 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-/* Basic Reset */
->>>>>>> 11d2534 (with login page)
-=======
-/* Basic Reset */
->>>>>>> 11d2534 (with login page)
-=======
-/* Basic Reset */
->>>>>>> 11d2534 (with login page)
-=======
-/* Basic Reset */
->>>>>>> 11d2534 (with login page)
+
 * {
   margin: 0;
   padding: 0;
@@ -38,12 +23,19 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 300px;
 }
+.card-space{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* Form Styling */
 .register-form h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
+  font-weight: 900;
   color: #333;
 }
 
@@ -82,19 +74,8 @@ body {
 }
 
 .submit-btn:hover {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   background-color: #5756f2;
 }
-=======
-=======
->>>>>>> 11d2534 (with login page)
-=======
->>>>>>> 11d2534 (with login page)
-=======
->>>>>>> 11d2534 (with login page)
-  background-color: #5756f2;
-}
->>>>>>> 11d2534 (with login page)
+  /* background-color: #5756f2; */
+
+
