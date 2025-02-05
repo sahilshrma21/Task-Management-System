@@ -77,15 +77,15 @@ const Register = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Register;
-=======
-export default Register;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 11d2534 (with login page)
-=======
->>>>>>> 11d2534 (with login page)
-=======
->>>>>>> 11d2534 (with login page)
+// <<<<<<< HEAD
+// =======
+// export default Register;
+// <<<<<<< HEAD
+// <<<<<<< HEAD
+// >>>>>>> 11d2534 (with login page)
+// =======
+// >>>>>>> 11d2534 (with login page)
+// =======
+// >>>>>>> 11d2534 (with login page)
 
