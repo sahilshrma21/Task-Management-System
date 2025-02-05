@@ -20,7 +20,7 @@ body {
   display: flex;
   align-items: center;
   background-color: #A6BDFF; /* Navbar background color */
-  padding: 10px 10px; /* Padding for the navbar */
+  padding: 8px 20px; /* Padding for the navbar */
   overflow: hidden;
 }
 
@@ -47,7 +47,8 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 6vh; /* Font size for the task name */
-  padding-top: 20px;
+  padding-top: 5px;
+  font-weight: 900;
 }
 
 .taskDetails {
@@ -65,10 +66,11 @@ body {
 
 .content p {
   text-align: left;
+  font-size: 2.6vh;
 }
 
 .taskTitle {
-  font-size: 4.5vh; /* Font size for the task title */
+  font-size: 4.2vh; /* Font size for the task title */
   margin-bottom: 15px; /* Space below the task title */
   color: #333; /* Color for the task title */
   text-align: center; /* Center align the task title */
@@ -80,7 +82,7 @@ h2 {
 }
 
 p {
-  font-size:3vh;
+  font-size: 16px;
   margin: 10px 0;
 }
 

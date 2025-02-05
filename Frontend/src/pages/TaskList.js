@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "../Style/TaskList.module.css"; // Updated import
+import styles from '../Style/TaskList.module.css';
 
 const TaskList = () => {
   const navigate = useNavigate();
